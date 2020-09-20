@@ -1,0 +1,108 @@
+2020-06-07 13:27:04,067 ERROR: Exception on /reser_password/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyZXNldF9wYXNzd29yZCI6NCwiZXhwIjoxNTkxNTE3MjE0LjMxMzA2NTh9.P9tbjuYBTrEcGlm8dJxBjRHJWzGJzBfeBsmZg4SFjKQ [GET] [in c:\users\admin\microblog\venv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\admin\microblog\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\admin\microblog\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\admin\microblog\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\admin\microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\admin\microblog\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\admin\microblog\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\ADMIN\microblog\app\routes.py", line 179, in reset_password
+    return render_template('reset_password.html', form=form)
+  File "c:\users\admin\microblog\venv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "c:\users\admin\microblog\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\admin\microblog\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\admin\microblog\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\admin\microblog\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\ADMIN\microblog\app\templates\reset_password.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\ADMIN\microblog\app\templates\base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\ADMIN\microblog\app\templates\reset_password.html", line 10, in block "content"
+    {% for error in form.password.errors %}
+  File "c:\users\admin\microblog\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'forms' is undefined
+2020-09-20 02:00:30,466 ERROR: Exception on /edit_profile [POST] [in c:\python38\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\python38\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "c:\python38\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\python38\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\python38\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\python38\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\python38\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\python38\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\python38\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\python38\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "E:\microblog\app\routes.py", line 93, in edit_profile
+    db.session.commit()
+  File "c:\python38\lib\site-packages\sqlalchemy\orm\scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\python38\lib\site-packages\sqlalchemy\orm\session.py", line 1042, in commit
+    self.transaction.commit()
+  File "c:\python38\lib\site-packages\sqlalchemy\orm\session.py", line 504, in commit
+    self._prepare_impl()
+  File "c:\python38\lib\site-packages\sqlalchemy\orm\session.py", line 483, in _prepare_impl
+    self.session.flush()
+  File "c:\python38\lib\site-packages\sqlalchemy\orm\session.py", line 2523, in flush
+    self._flush(objects)
+  File "c:\python38\lib\site-packages\sqlalchemy\orm\session.py", line 2664, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "c:\python38\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "c:\python38\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "c:\python38\lib\site-packages\sqlalchemy\orm\session.py", line 2624, in _flush
+    flush_context.execute()
+  File "c:\python38\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "c:\python38\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 586, in execute
+    persistence.save_obj(
+  File "c:\python38\lib\site-packages\sqlalchemy\orm\persistence.py", line 230, in save_obj
+    _emit_update_statements(
+  File "c:\python38\lib\site-packages\sqlalchemy\orm\persistence.py", line 994, in _emit_update_statements
+    c = cached_connections[connection].execute(
+  File "c:\python38\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "c:\python38\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\python38\lib\site-packages\sqlalchemy\engine\base.py", line 1124, in _execute_clauseelement
+    ret = self._execute_context(
+  File "c:\python38\lib\site-packages\sqlalchemy\engine\base.py", line 1316, in _execute_context
+    self._handle_dbapi_exception(
+  File "c:\python38\lib\site-packages\sqlalchemy\engine\base.py", line 1510, in _handle_dbapi_exception
+    util.raise_(
+  File "c:\python38\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "c:\python38\lib\site-packages\sqlalchemy\engine\base.py", line 1276, in _execute_context
+    self.dialect.do_execute(
+  File "c:\python38\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
+[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
+[parameters: ('notameya', '', 4)]
+(Background on this error at: http://sqlalche.me/e/13/gkpj)

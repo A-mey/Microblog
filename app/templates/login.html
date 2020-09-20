@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+    <div id="container">
+    <div class="form-area">
+	<div class="header login">
+	<h1>Sign In</h1>
+	</div>
+    <form action="" method="post" novalidate>
+        {{form.hidden_tag()}}
+		<p>
+			<div class="row">
+			{{form.username.label}}<br>
+			</div>
+			<div class="row">
+			{{form.username(size=32)}}
+			</div>
+			{% for error in form.username.errors %}
+			<span style="color:red;" >[{{error}}]</span>
+			{% endfor %}
+		</p>
+		<p>
+			<div class="row">
+			{{form.password.label}}<br>
+			</div>
+			<div class="row">
+			{{form.password(size=32)}}
+			</div>
+			{% for error in form.password.errors %}
+			<span style="color:red";>[{{error}}]</span>
+			{% endfor %}
+		</p>
+		<p><div class="row">{{form.remember_me()}}&nbsp{{form.remember_me.label()}}</div></p>
+		<div class="row">
+		<div class="btn">
+		<p>{{form.submit()}}</p>
+		</div>
+		</div>
+		<p>New User?&nbsp<a href={{ url_for('register') }}>Click to Register!</a></p>
+		<p>
+		    Forgot your password?&nbsp
+			<a href="{{ url_for('reset_password_request') }}">Click to reset</a>
+		</p>
+	</form>
+	</div>
+	</div>
+{% endblock %}
