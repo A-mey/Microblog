@@ -1,0 +1,29 @@
+@keyframes bg-slide {
+    0% {
+        background-image: url(../bg/Fields.jpg),url(../bg/Beach.jpg);
+    }
+
+    16.6666% {
+        background-image: url(../bg/Beach.jpg),url(../bg/Snow.jpg);
+    }
+
+    33.3333% {
+        background-image: url(../bg/Snow.jpg),url(../bg/Shell.jpg);
+    }
+
+    50% {
+        background-image: url(../bg/Shell.jpg),url(../bg/Skyline.jpg);
+    }
+
+    66.6666% {
+        background-image: url(../bg/Skyline.jpg),url(../bg/Underwater.jpg);
+    }
+
+    83.3333% {
+        background-image: url(../bg/Underwater.jpg),url(../bg/Mountain.jpg);
+    }
+
+    100% {
+        background-image: url(../bg/Mountain.jpg),url(../bg/Fields.jpg);
+    }
+} 
